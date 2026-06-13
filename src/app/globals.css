@@ -1,6 +1,4 @@
-@import "tailwindcss";
-
-@theme inline {
+:root {
   /* Backgrounds */
   --color-page: #000000;
   --color-footer: #05140e;
@@ -8,30 +6,89 @@
   /* Text & brand */
   --color-contrast: #f2f2f2;
   --color-primary: #28a070;
+  --color-primary-30: rgba(40, 160, 112, 0.3);
   --color-primary-light: #5bd3a3;
   --color-link: #84deba;
   --color-button: #1e7854;
   --color-brand-100: #d6f4e8;
   --color-placeholder: #0b2e50;
+  --color-white: #ffffff;
+  --color-muted: #a1a1aa;
 
-  /* Typography */
-  --font-heading: var(--font-heading);
-  --font-body: var(--font-body);
-
+  /* Font sizes */
   --text-tiny: 10px;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-4xl: 36px;
+  --text-6xl: 60px;
   --text-h6: 28px;
-  --text-h6--line-height: 1;
   --text-h5: 32px;
-  --text-h5--line-height: 1;
   --text-h4: 40px;
-  --text-h4--line-height: 1;
   --text-h2: 64px;
-  --text-h2--line-height: 1;
   --text-h1: 80px;
-  --text-h1--line-height: 1;
+
+  /* Layout */
+  --breakpoint-lg: 1024px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
   background: var(--color-page);
   color: var(--color-contrast);
+  font-family: var(--font-body), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+button {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

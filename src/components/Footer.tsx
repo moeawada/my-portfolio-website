@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import Button from "./Button";
+import styles from "./Footer.module.css";
 
 const workLinks = [
   { href: "/work", label: "Projects" },
@@ -9,64 +10,56 @@ const workLinks = [
 ];
 
 const connectLinks = [
-  { href: "#", label: "LinkedIn" },
+  { href: "https://www.linkedin.com/in/mohamad-awada-design/", label: "LinkedIn" },
   { href: "mailto:hello@mohamadawada.ca", label: "Email" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="border-t-2 border-primary bg-footer px-6 py-8 lg:flex lg:justify-center lg:p-16">
-      <div className="flex flex-col gap-4 lg:max-w-[1312px] lg:flex-1 lg:gap-6">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between lg:gap-6 lg:pr-32">
-          <div className="flex flex-col gap-4 lg:gap-6">
-            <div className="flex flex-col gap-2 lg:gap-4">
-              <div className="flex items-center gap-4">
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.topRow}>
+          <div className={styles.leftCol}>
+            <div className={styles.brandBlock}>
+              <div className={styles.brandRow}>
                 <Logo />
-                <span className="font-heading text-h6 font-medium text-white">
-                  Mohamad Awada
-                </span>
+                <span className={styles.brandName}>Mohamad Awada</span>
               </div>
-              <p className="text-base text-primary-light lg:text-xl">
-                Made by Moe, designed with care.
-              </p>
+              <p className={styles.tagline}>Made by Moe, designed with care.</p>
             </div>
 
-            <div className="hidden lg:flex lg:flex-col lg:gap-4">
-              <p className="font-heading text-h6 font-medium text-contrast">
-                Let&rsquo;s build something together.
-              </p>
+            <div className={styles.ctaDesktop}>
+              <p className={styles.ctaHeading}>Let&rsquo;s build something together.</p>
               <Button href="/contact" icon>
                 Get in touch
               </Button>
             </div>
           </div>
 
-          <div className="hidden lg:flex lg:gap-8">
-            <div className="flex flex-col gap-6">
-              <h3 className="font-heading text-h5 font-medium text-white">Work</h3>
-              <div className="flex flex-col gap-4">
+          <div className={styles.linkColumns}>
+            <div className={styles.linkColumn}>
+              <h3 className={styles.columnHeading}>Work</h3>
+              <div className={styles.columnLinks}>
                 {workLinks.map(({ href, label }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    className="text-xl font-medium text-contrast transition-colors hover:text-link"
-                  >
+                  <Link key={label} href={href} className={styles.footerLink}>
                     {label}
                   </Link>
                 ))}
               </div>
             </div>
 
-            <div className="self-stretch border-l border-primary/30" />
+            <div className={styles.verticalDivider} />
 
-            <div className="flex flex-col gap-6">
-              <h3 className="font-heading text-h5 font-medium text-white">Connect</h3>
-              <div className="flex flex-col gap-4">
+            <div className={styles.linkColumn}>
+              <h3 className={styles.columnHeading}>Connect</h3>
+              <div className={styles.columnLinks}>
                 {connectLinks.map(({ href, label }) => (
                   <Link
                     key={label}
                     href={href}
-                    className="text-xl font-medium text-contrast transition-colors hover:text-link"
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className={styles.footerLink}
                   >
                     {label}
                   </Link>
@@ -76,42 +69,38 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary/30 py-2 lg:hidden" />
+        <div className={styles.mobileDivider} />
 
-        <div className="flex flex-col gap-4 lg:hidden">
-          <p className="font-heading text-h6 font-medium text-contrast">
-            Let&rsquo;s build something together.
-          </p>
-          <Button href="/contact" icon className="w-full">
+        <div className={styles.mobileCta}>
+          <p className={styles.ctaHeading}>Let&rsquo;s build something together.</p>
+          <Button href="/contact" icon fullWidth>
             Get in touch
           </Button>
         </div>
 
-        <div className="border-t border-primary/30 py-2 lg:hidden" />
+        <div className={styles.mobileDivider} />
 
-        <div className="flex items-start justify-between px-2 lg:hidden">
-          <div className="flex flex-col gap-6">
-            <h3 className="font-heading text-h6 font-medium text-white">Work</h3>
-            <div className="flex flex-col gap-4">
+        <div className={styles.mobileLinksRow}>
+          <div className={styles.linkColumn}>
+            <h3 className={styles.mobileColumnHeading}>Work</h3>
+            <div className={styles.columnLinks}>
               {workLinks.map(({ href, label }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  className="text-base text-contrast transition-colors hover:text-link"
-                >
+                <Link key={label} href={href} className={styles.mobileFooterLink}>
                   {label}
                 </Link>
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-6">
-            <h3 className="font-heading text-h6 font-medium text-white">Connect</h3>
-            <div className="flex flex-col gap-4">
+          <div className={styles.linkColumn}>
+            <h3 className={styles.mobileColumnHeading}>Connect</h3>
+            <div className={styles.columnLinks}>
               {connectLinks.map(({ href, label }) => (
                 <Link
                   key={label}
                   href={href}
-                  className="text-base text-contrast transition-colors hover:text-link"
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className={styles.mobileFooterLink}
                 >
                   {label}
                 </Link>
@@ -120,9 +109,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-1 pt-6 text-tiny text-primary lg:text-sm">
+        <div className={styles.bottomRow}>
           <p>© 2026 Mohamad Awada. All rights reserved.</p>
-          <p className="lg:hidden">Designed and built by Mohamad Awada (Moe)</p>
+          <p className={styles.mobileOnly}>Designed and built by Mohamad Awada (Moe)</p>
         </div>
       </div>
     </footer>

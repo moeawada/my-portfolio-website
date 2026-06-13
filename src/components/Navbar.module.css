@@ -1,0 +1,225 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  background-color: var(--color-footer);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+@media (min-width: 1024px) {
+  .headerInner {
+    padding: 16px 64px;
+  }
+}
+
+.leftGroup {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+/* Desktop nav links */
+.desktopNav {
+  display: none;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+.navLink {
+  padding: 8px 24px;
+  font-family: var(--font-body), sans-serif;
+  font-size: var(--text-xl);
+  line-height: 28px;
+  font-weight: 700;
+  transition: color 150ms ease;
+}
+
+.navLinkActive {
+  color: var(--color-primary-light);
+}
+
+.navLinkInactive {
+  color: var(--color-contrast);
+}
+
+.navLinkInactive:hover {
+  color: var(--color-primary-light);
+}
+
+.desktopContact {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopContact {
+    display: block;
+  }
+}
+
+.menuToggle {
+  color: var(--color-contrast);
+}
+
+@media (min-width: 1024px) {
+  .menuToggle {
+    display: none;
+  }
+}
+
+/* Mobile overlay nav */
+.mobileNav {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--color-footer);
+  padding: 24px;
+  transition: transform 300ms ease-in-out;
+  transform: translateX(100%);
+  pointer-events: none;
+}
+
+.mobileNavOpen {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+@media (min-width: 1024px) {
+  .mobileNav {
+    display: none;
+  }
+}
+
+.mobileTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 16px;
+}
+
+.closeButton {
+  color: var(--color-contrast);
+}
+
+/* Page links */
+.linksWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  padding-top: 8px;
+}
+
+.linksGroup {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.link {
+  width: 100%;
+  padding-right: 16px;
+  font-family: var(--font-heading), sans-serif;
+  font-size: var(--text-h5);
+  line-height: 1;
+  font-weight: 500;
+  color: var(--color-contrast);
+  transition: color 150ms ease;
+}
+
+.linkFirst {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.linkRest {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.linkActive {
+  border-left: 4px solid var(--color-primary-light);
+  padding-left: 12px;
+}
+
+.linkInactive {
+  padding-left: 16px;
+}
+
+.linkInactive:hover {
+  color: var(--color-primary-light);
+}
+
+/* Dividers */
+.divider {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.dividerLine {
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-primary-light);
+}
+
+/* LinkedIn link */
+.linkedin {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  font-family: var(--font-body), sans-serif;
+  font-size: var(--text-2xl);
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-contrast);
+  text-decoration: underline;
+  transition: color 150ms ease;
+}
+
+.linkedin:hover {
+  color: var(--color-primary-light);
+}
+
+/* Contact Me button */
+.contactWrapper {
+  width: 100%;
+  padding: 0 16px;
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border-radius: 9999px;
+  background-color: var(--color-button);
+  padding: 12px 24px;
+  font-family: var(--font-body), sans-serif;
+  font-size: var(--text-lg);
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-contrast);
+  transition: opacity 150ms ease;
+}
+
+.contactButton:hover {
+  opacity: 0.8;
+}

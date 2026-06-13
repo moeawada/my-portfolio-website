@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
 import Logo from "./Logo";
 import Button from "./Button";
+import styles from "./Navbar.module.css";
 
 const links = [
   { href: "/work", label: "My Work" },
@@ -18,23 +19,19 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header
-      className={`fixed top-0 left-0 z-50 flex w-full flex-col bg-footer lg:h-auto ${
-        open ? "h-screen" : ""
-      }`}
-    >
-      <div className="flex items-center justify-between px-6 py-6 lg:px-16 lg:py-4">
-        <div className="flex items-center gap-16">
+    <header className={styles.header}>
+      <div className={styles.headerInner}>
+        <div className={styles.leftGroup}>
           <Logo />
-          <nav className="hidden items-center lg:flex">
+          <nav className={styles.desktopNav}>
             {links.map(({ href, label }) => {
               const isActive = pathname === href;
               return (
                 <Link
                   key={label}
                   href={href}
-                  className={`px-4 py-2 font-body text-xl font-bold transition-colors ${
-                    isActive ? "text-primary-light" : "text-contrast hover:text-primary-light"
+                  className={`${styles.navLink} ${
+                    isActive ? styles.navLinkActive : styles.navLinkInactive
                   }`}
                 >
                   {label}
@@ -44,7 +41,7 @@ export default function Navbar() {
           </nav>
         </div>
 
-        <div className="hidden lg:block">
+        <div className={styles.desktopContact}>
           <Button href="/contact" size="sm">
             Contact Me
           </Button>
@@ -54,64 +51,85 @@ export default function Navbar() {
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((prev) => !prev)}
-          className="text-contrast lg:hidden"
+          className={styles.menuToggle}
         >
           {open ? <X size={24} /> : <List size={24} />}
         </button>
       </div>
 
-      {open && (
-        <nav className="flex flex-1 flex-col gap-4 px-6 pt-4 pb-6 lg:hidden">
-          <div className="flex w-full flex-col items-start">
-            {(() => {
-              const renderLink = ({ href, label }: (typeof links)[number], isFirst: boolean) => {
-                const isActive = pathname === href;
-                return (
-                  <Link
-                    key={label}
-                    href={href}
-                    onClick={() => setOpen(false)}
-                    className={`w-full ${isFirst ? "py-4" : "py-2"} pr-4 font-heading text-h5 font-medium text-contrast transition-colors ${
-                      isActive
-                        ? "border-l-4 border-primary-light pl-3"
-                        : "pl-4 hover:text-primary-light"
-                    }`}
-                  >
-                    {label}
-                  </Link>
-                );
-              };
-
-              return (
-                <>
-                  {renderLink(links[0], true)}
-                  <div className="flex w-full flex-col gap-3">
-                    {links.slice(1).map((link) => renderLink(link, false))}
-                  </div>
-                </>
-              );
-            })()}
-          </div>
-
-          <div className="w-full border-t-2 border-primary-light py-2" />
-
-          <Link
-            href="#"
+      <nav
+        aria-hidden={!open}
+        className={`${styles.mobileNav} ${open ? styles.mobileNavOpen : ""}`}
+      >
+        <div className={styles.mobileTopRow}>
+          <Logo />
+          <button
+            type="button"
+            aria-label="Close menu"
             onClick={() => setOpen(false)}
-            className="px-4 py-2 font-body text-xl font-bold text-contrast underline transition-colors hover:text-primary-light"
+            className={styles.closeButton}
           >
-            LinkedIn
+            <X size={24} />
+          </button>
+        </div>
+
+        <div className={styles.linksWrapper}>
+          {(() => {
+            const renderLink = ({ href, label }: (typeof links)[number], isFirst: boolean) => {
+              const isActive = pathname === href;
+              return (
+                <Link
+                  key={label}
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  className={`${styles.link} ${isFirst ? styles.linkFirst : styles.linkRest} ${
+                    isActive ? styles.linkActive : styles.linkInactive
+                  }`}
+                >
+                  {label}
+                </Link>
+              );
+            };
+
+            return (
+              <>
+                {renderLink(links[0], true)}
+                <div className={styles.linksGroup}>
+                  {links.slice(1).map((link) => renderLink(link, false))}
+                </div>
+              </>
+            );
+          })()}
+        </div>
+
+        <div className={styles.divider}>
+          <div className={styles.dividerLine} />
+        </div>
+
+        <Link
+          href="https://www.linkedin.com/in/mohamad-awada-design/"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setOpen(false)}
+          className={styles.linkedin}
+        >
+          LinkedIn
+        </Link>
+
+        <div className={styles.divider}>
+          <div className={styles.dividerLine} />
+        </div>
+
+        <div className={styles.contactWrapper}>
+          <Link
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className={styles.contactButton}
+          >
+            Contact Me
           </Link>
-
-          <div className="w-full border-t-2 border-primary-light py-2" />
-
-          <div className="px-4">
-            <Button href="/contact" className="w-full" onClick={() => setOpen(false)}>
-              Contact Me
-            </Button>
-          </div>
-        </nav>
-      )}
+        </div>
+      </nav>
     </header>
   );
 }

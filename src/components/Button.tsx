@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./Button.module.css";
 
 function ArrowUpRight({ className = "" }: { className?: string }) {
   return (
@@ -22,19 +23,19 @@ type ButtonProps = {
   variant?: "primary" | "quiet";
   size?: "sm" | "md" | "lg";
   icon?: boolean;
-  className?: string;
+  fullWidth?: boolean;
   onClick?: () => void;
 };
 
 const sizeClasses: Record<NonNullable<ButtonProps["size"]>, string> = {
-  sm: "px-4 py-2 text-xs gap-3",
-  md: "px-6 py-4 text-xl gap-3",
-  lg: "pl-0 pr-[18px] py-[9px] gap-[13.5px] text-lg lg:pr-6 lg:py-3 lg:gap-[18px] lg:text-2xl",
+  sm: styles.sm,
+  md: styles.md,
+  lg: styles.lg,
 };
 
 const variantClasses: Record<NonNullable<ButtonProps["variant"]>, string> = {
-  primary: "bg-button text-contrast",
-  quiet: "bg-transparent text-button",
+  primary: styles.primary,
+  quiet: styles.quiet,
 };
 
 export default function Button({
@@ -43,15 +44,17 @@ export default function Button({
   variant = "primary",
   size = "md",
   icon = false,
-  className = "",
+  fullWidth = false,
   onClick,
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center rounded-full font-heading font-bold transition-opacity hover:opacity-80 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+  const classes = `${styles.button} ${variantClasses[variant]} ${sizeClasses[size]} ${
+    fullWidth ? styles.fullWidth : ""
+  }`;
 
   const content = (
     <>
       {children}
-      {icon && <ArrowUpRight className="size-[1.2em]" />}
+      {icon && <ArrowUpRight className={styles.icon} />}
     </>
   );
 

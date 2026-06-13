@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import styles from "./MoeSignature.module.css";
 
 const SESSION_KEY = "moe-signature-played";
 
@@ -42,13 +43,10 @@ export default function MoeSignature() {
   );
 
   return (
-    <div
-      ref={containerRef}
-      className="relative w-screen overflow-hidden ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]"
-    >
+    <div ref={containerRef} className={styles.container}>
       <svg
         viewBox="1250 0 1600 332"
-        className="h-auto w-full"
+        className={styles.svg}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
