@@ -1,0 +1,204 @@
+{
+  "hero": {
+    "title": "ENMAX Design System",
+    "subtitle": "Understand how I helped shape ENMAX's design system and set the foundation for powerful AI assisted workflows.",
+    "tags": [
+      { "label": "Design System",           "variant": "primary"   },
+      { "label": "AI workflow integration", "variant": "secondary" },
+      { "label": "Documentation Strategy",  "variant": "red"       },
+      { "label": "Figma",                   "variant": "purple"    },
+      { "label": "Claude",                  "variant": "purple"    },
+      { "label": "Figma MCP",               "variant": "purple"    },
+      { "label": "GitHub Copilot",          "variant": "purple"    },
+      { "label": "VS Code",                 "variant": "purple"    }
+    ]
+  },
+  "meta": [
+    { "label": "ROLE",     "value": "UX Design Co-op Student",                                          "link": null },
+    { "label": "TIMELINE", "value": "January 2026 - August 2026 (Ongoing)",                             "link": null },
+    { "label": "TOOLS",    "value": "Figma, Claude, Figma Make, Figma MCP, GitHub Copilot, VS Code",   "link": null },
+    { "label": "CLIENT",   "value": "ENMAX Corporation",                                                "link": "https://www.enmax.com" }
+  ],
+  "sections": [
+    {
+      "id": "background",
+      "heading": "Background",
+      "paragraphs": [
+        "ENMAX is a Calgary-based utility company serving both regulated and competitive energy markets. As a UX Design Co-op Student, I was brought on for an 8-month term with two mandates: fill the existing gaps in ENMAX's design system, and get it ready for the integration of AI design tools - specifically Figma's MCP server and GitHub Copilot."
+      ],
+      "richParagraph": {
+        "before": "What started as a scoping exercise quickly became one of the most comprehensive and forward-thinking projects I've had the opportunity to lead. ",
+        "bold": "This is the story of how I took a fragmented, pre-AI design system and rebuilt it into a scalable, AI-digestible foundation - and where it's still going",
+        "after": "."
+      }
+    },
+    {
+      "id": "starting-point",
+      "heading": "The Starting Point",
+      "paragraphs": [
+        "Before I could build anything new, I had to understand what already existed.",
+        "I began with research. Not just into ENMAX's system specifically, but into what truly makes a design system work at an enterprise scale. I needed to understand best practices, common failure points, and what it means to design a system that can outlive the tools and workflows of today. My first iteration was straightforward: a single-tiered variable system. Values mapped directly to outputs. It worked, in the way that a rough draft works - it proved the concept, but it wasn't going to scale.",
+        "The more I learned, the more I understood why."
+      ]
+    },
+    {
+      "id": "phase-1",
+      "heading": "Phase 1 – Building the Foundation: A Three-Tier Token Architecture",
+      "paragraphs": [
+        "The turning point came when I shifted my mental model from values to tokens, and more specifically, to the relationships between them. After deep research and consulting with industry experts, I made the decision to restructure ENMAX's variable system around a three-tiered architecture:"
+      ],
+      "bulletList": [
+        "Primitive tokens - raw values. The source of truth for color, spacing, and typography at their most foundational level.",
+        "Global tokens - named aliases that give primitives meaning without yet assigning intent.",
+        "Semantic tokens - context-aware tokens that map directly to UI decisions (e.g., color.background.primary, color.feedback.error)."
+      ],
+      "paragraphsAfter": [
+        "This wasn't just a naming exercise. This restructuring gave the design system flexibility, scalability, and consistency across naming conventions, use cases, and categories. It also became the scaffolding that everything else would be built on top of.",
+        "Critically, every single token was validated for WCAG contrast and accessibility compliance. For a utility company with a broad and diverse user base, accessibility isn't a nice-to-have, it's a responsibility baked into every decision."
+      ]
+    },
+    {
+      "id": "phase-2",
+      "heading": "Phase 2 – Auditing the Components: What Existed, What Didn't, and What Needed to Change",
+      "paragraphs": [
+        "With the token architecture in place, the next step was understanding the component landscape.",
+        "I worked closely with my leaders to audit everything. We identified what had been deprecated, what lived only in Figma versus what had been built in code, and which components were actively in use. From that audit, we established a core component set to focus on. Then I started mapping the token architecture to those components - and that's where things got interesting.",
+        "When the ENMAX design system was originally built, Figma didn't have variables yet. As a result, the components had been constructed without token connections - everything was hardcoded. I had to map each component manually. However, while I was doing that, I noticed something beyond the missing tokens. Some components weren't just missing token connections - they were built below their potential. Auto-layout was inconsistently applied. Component properties weren't properly configured. The structure was functional, but it wasn't future-ready."
+      ],
+      "richParagraph": {
+        "before": "",
+        "bold": "So I made a call: don't just map the tokens. Rebuild the components properly.",
+        "after": ""
+      },
+      "paragraphsAfter": [
+        "With the support and guidance of my leaders and colleagues, I rebuilt each component to follow auto-layout best practices, assigned proper component properties, and ensured the system stayed human-first while becoming AI-digestible. It was a significant body of work - but it was the right one to do.",
+        "One more thing came out of this phase that's worth naming on its own: during the token mapping process, I also took on the responsibility of introducing dark mode to enmax.com. By structuring the semantic tokens with mode-switching in mind, I was able to map a complete dark mode token set across the component library while maintaining at least AA WCAG compliance at every step, and always pushing for AAA where achievable. Whether or not I'm still at ENMAX when it ships, the work is complete and ready to hand off to the development team. That felt important to do right."
+      ]
+    },
+    {
+      "id": "phase-3",
+      "heading": "Phase 3 - Enter Slots: Doing More With Less",
+      "introRich": {
+        "before": "Midway through the component rebuild, Figma dropped something the design systems community had been anticipating for a long time: ",
+        "bold": "Slots",
+        "after": "."
+      },
+      "paragraphs": [
+        "Slots are flexible \"drop zones\" inside components that allow designers to add, customize, and arrange content directly within an instance - without ever needing to detach it. The concept mirrors how components actually behave in code (particularly in React), which makes designs easier for both developers and AI tools to interpret. Fewer workarounds. Less detaching. Cleaner, more intentional structure.",
+        "For ENMAX, this was a pivotal moment. Rather than treating it as a disruption mid-rebuild, I absorbed it into my process and used it to push the system further.",
+        "By leveraging slots alongside booleans - and using variants only where they were genuinely warranted - I was able to reduce the total number of component variants by over 40%, while simultaneously increasing the actual variation capability of those components. The system became leaner, more expressive, and significantly easier for designers to use correctly."
+      ]
+    },
+    {
+      "id": "phase-4",
+      "heading": "Phase 4 – The Documentation Challenge & A New AI-Assisted Workflow",
+      "introRich": {
+        "before": "Toward the end of the component rebuild phase, Figma began rolling out deeper AI integrations through what they call Skills - connective tools that let AI agents interact directly with Figma's canvas and data. One in particular changed everything for me: ",
+        "bold": "use_figma",
+        "after": "."
+      },
+      "paragraphs": [
+        "use_figma allowed GitHub Copilot to write directly to Figma's canvas. The impact was immediate. What had been a slow, manual documentation process - consulting with leadership, mapping token-to-component relationships, maintaining consistency across a growing system - became dramatically more efficient. The real breakthrough wasn't just the speed. It was the workflow I discovered around it.",
+        "I developed a process where GitHub Copilot could simultaneously:"
+      ],
+      "numberedList": [
+        "Write variable descriptions and component configurations directly into the Figma file, and",
+        "Capture that same information into a set of parallel markdown files - one for tokens, one for components."
+      ],
+      "paragraphsAfter": [
+        "This wasn't accidental redundancy. It was intentional future-proofing. In an industry where the tooling landscape can shift overnight, I wasn't going to let the system's knowledge become trapped inside a proprietary file format. The markdown files were portable, versionable, and ready to be consumed by any AI toolchain - now or in the future."
+      ],
+      "closingRich": {
+        "before": "",
+        "bold": "Because I was already thinking about what came next.",
+        "after": ""
+      }
+    },
+    {
+      "id": "phase-5",
+      "heading": "Phase 5 – The North Star: An ENMAX Design System Skill",
+      "introRich": {
+        "before": "Everything I had done, the token architecture, the component rebuilds, the documentation strategy, was pointing toward one thing: ",
+        "bold": "the ENMAX Design System Skill",
+        "after": "."
+      },
+      "paragraphs": [
+        "The vision is straightforward but significant. A custom AI skill, built on the design system's documented knowledge, that allows AI agents to:"
+      ],
+      "numberedList": [
+        "Generate high-fidelity, ENMAX-true UI directly in Figma, ready for designers to refine",
+        "Scaffold production-ready React components for developers, using the actual ENMAX component library"
+      ],
+      "paragraphsAfter": [
+        "The goal isn't to replace the designer, it's to give them back their time. When the heavy lifting of UI construction can be handled by an AI working from an accurate, well-documented design system, designers are free to focus on what they do best: strategy, user empathy, and the decisions that no tool can make for them.",
+        "To test this, I put what existed to work. Using Figma's MCP server and the rules and documentation I had authored, I ran multiple rounds of testing and iteration - carefully reviewing whether the generated UI actually reflected ENMAX's design specifications, and correcting wherever it didn't. The results were genuinely exciting. The system was producing ENMAX-accurate UI."
+      ],
+      "closingRich": {
+        "before": "",
+        "bold": "But there was still a gap.",
+        "after": ""
+      }
+    },
+    {
+      "id": "missing-piece",
+      "heading": "The Missing Piece: Figma Code Connect",
+      "introRich": {
+        "before": "For all the progress made, one thing remained unresolved: the generated UI was visually accurate, but disconnected from living code. Through deeper research, I identified the missing link: ",
+        "bold": "Figma Code Connect",
+        "after": "."
+      },
+      "paragraphs": [
+        "Code Connect bridges the design system in Figma to the actual production components in the codebase. Once connected, every component in Figma carries real code context - not just a visual approximation. That means AI agents generating UI from the skill wouldn't just be producing something that looks like ENMAX. They'd be producing something that is ENMAX, in real, shippable code.",
+        "Code Connect is the final step toward a fully closed design-to-code ecosystem. It's something I'm actively advocating for as my work at ENMAX continues."
+      ]
+    },
+    {
+      "id": "summary",
+      "heading": "What This All Adds Up To",
+      "paragraphs": [
+        "Stepping back, what this project represents is more than a design system refresh. It's a rethinking of what a design system is for in an era where AI is becoming a collaborator.",
+        "The work spans:"
+      ],
+      "bulletList": [
+        "A three-tier token architecture that gives the system flexibility and semantic clarity",
+        "Rebuilt components that meet modern standards for auto-layout, properties, and token mapping",
+        "WCAG-compliant accessibility built in at every level",
+        "A 40%+ reduction in component variants through intelligent use of slots and booleans",
+        "A novel AI-assisted documentation workflow that keeps the design file and markdown in sync",
+        "A custom AI skill in progress, capable of generating ENMAX-true UI across design and code",
+        "A planned design system website to serve as a single source of truth for the entire organization",
+        "An active push for Figma Code Connect to close the final loop between design and production"
+      ]
+    },
+    {
+      "id": "whats-next",
+      "heading": "What's Next",
+      "paragraphs": [
+        "This case study captures the work to date - but the journey isn't over.",
+        "Code Connect is the immediate next frontier. Beyond that, the design system website will bring everything into a single, accessible reference point for designers, developers, and stakeholders across ENMAX. And as the skill matures and the codebase connection is established, the ambition is a fully AI-augmented design workflow - one that's grounded in ENMAX's own standards, maintained by real people, and built to evolve.",
+        "The system isn't finished. But that's kind of the point."
+      ]
+    }
+  ],
+  "ongoingText": {
+    "before": "This project Is currently ongoing. Feel free to ",
+    "linkText": "Contact Me",
+    "after": " to learn more about my experience."
+  },
+  "relatedProjects": [
+    {
+      "slug": "yyventc",
+      "title": "YYventC",
+      "description": "A community-first, mobile event discovery platform designed exclusively for Calgary.",
+      "imageKey": "yyventc",
+      "imageType": "square"
+    },
+    {
+      "slug": "trumi",
+      "title": "Trumi",
+      "description": "A personal growth app that helps you understand your values, set goals that align with them, and achieve what matters most.",
+      "imageKey": "trumi",
+      "imageType": "square"
+    }
+  ]
+}

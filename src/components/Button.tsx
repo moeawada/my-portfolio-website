@@ -1,0 +1,71 @@
+import Link from "next/link";
+
+function ArrowUpRight({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M23.7075 10.7081L14.7075 19.7081C14.5199 19.8957 14.2654 20.0011 14 20.0011C13.7346 20.0011 13.4801 19.8957 13.2925 19.7081C13.1049 19.5204 12.9994 19.2659 12.9994 19.0006C12.9994 18.7352 13.1049 18.4807 13.2925 18.2931L20.5863 11.0006H1C0.734784 11.0006 0.48043 10.8952 0.292893 10.7077C0.105357 10.5201 0 10.2658 0 10.0006C0 9.73534 0.105357 9.48099 0.292893 9.29345C0.48043 9.10591 0.734784 9.00056 1 9.00056H20.5863L13.2925 1.70806C13.1049 1.52042 12.9994 1.26592 12.9994 1.00056C12.9994 0.735192 13.1049 0.480697 13.2925 0.293056C13.4801 0.105415 13.7346 0 14 0C14.2654 0 14.5199 0.105415 14.7075 0.293056L23.7075 9.29306C23.8005 9.38593 23.8742 9.49622 23.9246 9.61762C23.9749 9.73901 24.0008 9.86914 24.0008 10.0006C24.0008 10.132 23.9749 10.2621 23.9246 10.3835C23.8742 10.5049 23.8005 10.6152 23.7075 10.7081Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+type ButtonProps = {
+  children: React.ReactNode;
+  href?: string;
+  variant?: "primary" | "quiet";
+  size?: "sm" | "md" | "lg";
+  icon?: boolean;
+  className?: string;
+  onClick?: () => void;
+};
+
+const sizeClasses: Record<NonNullable<ButtonProps["size"]>, string> = {
+  sm: "px-4 py-2 text-xs gap-3",
+  md: "px-6 py-4 text-xl gap-3",
+  lg: "pl-0 pr-[18px] py-[9px] gap-[13.5px] text-lg lg:pr-6 lg:py-3 lg:gap-[18px] lg:text-2xl",
+};
+
+const variantClasses: Record<NonNullable<ButtonProps["variant"]>, string> = {
+  primary: "bg-button text-contrast",
+  quiet: "bg-transparent text-button",
+};
+
+export default function Button({
+  children,
+  href,
+  variant = "primary",
+  size = "md",
+  icon = false,
+  className = "",
+  onClick,
+}: ButtonProps) {
+  const classes = `inline-flex items-center justify-center rounded-full font-heading font-bold transition-opacity hover:opacity-80 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+
+  const content = (
+    <>
+      {children}
+      {icon && <ArrowUpRight className="size-[1.2em]" />}
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={classes} onClick={onClick}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button className={classes} onClick={onClick}>
+      {content}
+    </button>
+  );
+}

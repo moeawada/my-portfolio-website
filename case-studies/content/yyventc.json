@@ -1,0 +1,116 @@
+{
+  "hero": {
+    "title": "YYventC",
+    "subtitle": "A community-first, mobile event discovery platform designed exclusively for Calgary.",
+    "tags": [
+      { "label": "Product Strategy", "variant": "primary" },
+      { "label": "UX Research",      "variant": "secondary" },
+      { "label": "Product Design",   "variant": "red" },
+      { "label": "Figma",            "variant": "purple" },
+      { "label": "Mobile App",       "variant": "tertiary" }
+    ]
+  },
+  "meta": [
+    { "label": "ROLE",     "value": "Product Strategist & Designer" },
+    { "label": "TIMELINE", "value": "September 2025 - December 2025" },
+    { "label": "TOOLS",    "value": "Figma, FigJam, Google Forms, Adobe Creative Suite, Microsoft 365" },
+    { "label": "CLIENT",   "value": "SAIT (Academic)" }
+  ],
+  "overview": {
+    "title": "Overview",
+    "paragraphs": [
+      "YYventC (pronounced \"events\") is a community-first, mobile event discovery platform designed exclusively for Calgary. The name is a play on \"YYC\" (Calgary's airport code) and \"events,\" because this app was built by Calgarians, for Calgarians.",
+      "My role on the team spanned the full design lifecycle, from initial problem framing and research synthesis all the way through information architecture, interaction design, and prototype refinement for our final MVP presentation."
+    ]
+  },
+  "problem": {
+    "title": "The Problem",
+    "paragraphs": [
+      "Calgary has a thriving local event scene, but no central place to find it. People were bouncing between Ticketmaster, Eventbrite, Instagram, and word of mouth, but still missing events they would have loved. Existing platforms prioritize big-budget, ticketed events and ignore the small, community-run experiences that actually make a city feel alive.",
+      "The deeper issue was connection. People didn't just want to find events. They wanted to find people to enjoy going with."
+    ],
+    "callout": "Calgary lacks a central hub for people to connect, for businesses to thrive, and for artists to shine."
+  },
+  "research": {
+    "title": "Research",
+    "intro": "We surveyed 32 Calgarians aged 18 to 35 to understand how they discover events and what they needed from a centralized platform. The numbers told a clear story:",
+    "stats": [
+      { "value": "32",    "label": "Survey respondents" },
+      { "value": "90.6%", "label": "Find events through social media" },
+      { "value": "62.5%", "label": "Have missed an event due to poor visibility" },
+      { "value": "81.3%", "label": "Wanted to support local businesses & creators" },
+      { "value": "81.3%", "label": "Would use YYventC for community functions" }
+    ],
+    "qualitative": {
+      "prefix": "Qualitative responses reinforced this. Users weren't just frustrated with existing apps, they felt the city's event scene was happening around them, not with them. One respondent wrote: \u201c",
+      "highlight": "It\u2019s the connection between people with locals in Calgary, bringing everyone together.",
+      "suffix": "\u201d That became the foundation of every design decision."
+    }
+  },
+  "contributions": {
+    "title": "My Contributions",
+    "introHeading": "Overview",
+    "intro": "Across this project I took ownership of YYventC's architecture and core experiences. From defining what belonged in the MVP and structuring the three-pillar navigation, to designing the Discover feed, the social Yvents layer, and the full signed-in/signed-out flow. My focus throughout was making sure every structural and interaction decision served the user's need to find events and feel connected to their city.",
+    "sections": [
+      {
+        "heading": "Information Architecture",
+        "body": "Using FigJam, I ran affinity mapping and prioritization exercises with my team to define what belonged in the MVP. One significant call: we cut a planned transit integration feature after recognizing it was scope creep that would require data partnerships we couldn\u2019t build. Instead, I refocused that energy on location-aware event surfacing for signed-in users. A simpler solution that delivered the same sense of local relevance.",
+        "image": null
+      },
+      {
+        "heading": "Navigation Structure",
+        "body": "I helped design YYventC\u2019s three-pillar navigation system consisting of Discover, Categories, and Community, aligning it with our core goals of helping users find events, connect with others, and engage with their local scene. This structure kept the app focused and avoided the cluttered experience that our research identified as a major frustration.",
+        "image": null
+      },
+      {
+        "heading": "Discover Page",
+        "body": "The Discover feed surfaces personalized, location-aware events with minimal category filters and a \u201cPopular Near You\u201d section. The design is deliberately uncluttered. 62.5% of our users had missed events due to poor visibility, so the priority was making the right events impossible to miss, not showing everything at once.",
+        "image": "discover"
+      },
+      {
+        "heading": "Social / Yvents Page",
+        "body": "The Yvents feed shows friends\u2019 activity and real attendee posts alongside events, turning discovery into a social experience. One survey respondent said they wanted to \u201csee what events my friends are going to, and if they cancel.\u201d This screen is the direct answer to that.",
+        "image": "events"
+      },
+      {
+        "heading": "Signed-In vs. Signed-Out Flows",
+        "body": "I designed the full separation between signed-in and signed-out states, deciding what to surface at each level, where to place friction, and how to make sign-up feel worth it. The onboarding copy, \u201cWe\u2019re glad you\u2019re here. Enjoy the moment with us.\u201d, was a deliberate tonal choice to make the app feel warm from the first screen.",
+        "image": null
+      },
+      {
+        "heading": "Prototype Refinement",
+        "body": "In the final phase I added push transitions, refined the chat flow, and did a full consistency pass across every interaction before our presentation. The goal was for the prototype to feel like a real product, not a static mockup.",
+        "image": null
+      }
+    ]
+  },
+  "outcome": {
+    "title": "Outcome",
+    "body": "The MVP prototype delivered a personalized Discover feed, category browsing, a Friends and Yvents social layer, verified organizer badges, and a polished signed-in/signed-out flow. Usability testing noted the design was clean and easy to navigate, and the community hub was called out as distinctively different from competitors."
+  },
+  "reflection": {
+    "title": "Reflection",
+    "paragraphs": [
+      "Good IA isn\u2019t about sitemaps. It\u2019s about understanding what someone needs to feel before they know what they need to do. Every structural decision on this project, including the three-pillar nav, the signed-in flow, cutting transit, came back to one question: does this serve the user, or does it serve our idea of the user?",
+      "YYventC was about more than event discovery. It was about giving Calgary a place where different people could find each other in new and unexpected spaces around the city. That belief shaped every screen."
+    ]
+  },
+  "relatedProjects": [
+    {
+      "slug": "enmax-design-system",
+      "title": "ENMAX Design System",
+      "description": "Understand how I helped shape ENMAX\u2019s design system and set the foundation for powerful AI assisted workflows.",
+      "imageKey": "enmax",
+      "imageType": "cropped",
+      "imageBg": null
+    },
+    {
+      "slug": "trumi",
+      "title": "Trumi",
+      "description": "A personal growth app that helps you understand your values, set goals that align with them, and achieve what matters most.",
+      "imageKey": "trumi",
+      "imageType": "square",
+      "imageBg": "#b5b5e8"
+    }
+  ]
+}

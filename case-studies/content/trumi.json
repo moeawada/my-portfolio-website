@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "title": "Trumi",
+    "subtitle": "A personal growth app that helps you understand your values, set goals that align with them, and achieve what matters most.",
+    "tags": [
+      { "label": "Product Design",       "variant": "primary"   },
+      { "label": "AI UX Design Process", "variant": "secondary" },
+      { "label": "Agile Methodologies",  "variant": "red"       },
+      { "label": "Figma",                "variant": "purple"    },
+      { "label": "Figma MCP",            "variant": "purple"    },
+      { "label": "Claude Code",          "variant": "purple"    },
+      { "label": "Gemini API",           "variant": "purple"    },
+      { "label": "Mobile App",           "variant": "tertiary"  }
+    ]
+  },
+  "meta": [
+    { "label": "ROLE",     "value": "Product Designer & AI UX Designer" },
+    { "label": "TIMELINE", "value": "January 2026 - April 2026" },
+    { "label": "TOOLS",    "value": "Figma, FigJam, Microsoft Forms, Figma MCP, Claude Code, Gemini API" },
+    { "label": "CLIENT",   "value": "SAIT (Academic)" }
+  ],
+  "overview": {
+    "title": "Overview",
+    "paragraphs": [
+      "Trumi is a self-discovery and personal growth companion designed for young adults navigating self-identity and a sense of achievement in a fast, high-pressure digital world. Rather than pushing users to optimize and produce more, Trumi begins with reflection and self-understanding, helping users build goals that actually align with their values. The app integrates a customizable character, AI-powered conversations, and guided reflection pathways to support growth that feels realistic, compassionate, and genuinely personal."
+    ]
+  },
+  "problem": {
+    "title": "The Problem",
+    "paragraphs": [
+      "Most self-improvement apps skip straight to execution: track this, optimize that, complete more. But for young adults already navigating identity, pressure, and burnout, being told to do more is exactly the wrong starting point.",
+      "The real problem isn\u2019t a lack of productivity tools. It\u2019s that existing tools are built around output, not understanding. They push goals without asking who you are first, and when you inevitably fall behind, they make you feel worse for it."
+    ],
+    "callout": "Trumi transforms self-improvement into self-understanding by encouraging reflection without judgment, progress without pressure, and motivation without guilt."
+  },
+  "research": {
+    "title": "Research",
+    "intro": "We surveyed 34 participants across a diverse demographic, with the majority aged 18 to 34. The findings painted a consistent picture of people who are genuinely trying, but being let down by the tools available to them.",
+    "stats": [
+      { "value": "68%", "label": "feel overwhelmed often or very often" },
+      { "value": "76%", "label": "Want insights into their patterns and identity" },
+      { "value": "94%", "label": "Find visual progress motivating" },
+      { "value": "85%", "label": "Value emotional support in reaching goals." },
+      { "value": "44%", "label": "feel guilty or anxious when they fall behind" }
+    ],
+    "postStats": "The top three challenges identified were losing motivation over time, feeling discouraged after missing days, and not knowing what to focus on.",
+    "qualitative": "The qualitative responses brought the numbers to life. When asked how they\u2019d want a supportive character to respond after missing a few days of tracking, users weren\u2019t looking for a harsh accountability system. They described wanting something more human: \u201cgentle but upfront,\u201d \u201cencouraging, not disappointed,\u201d and one response that stuck with the entire team:",
+    "callout": "\u201cAn advice sandwich: reassurance that setbacks happen, a little constructive criticism in the middle, then another layer of encouragement to close it out.\u201d",
+    "postCallout": "That answer captured exactly what Trumi needed to be. Not a cheerleader, not a critic. Something in between, delivered with care. It shaped every design decision that followed."
+  },
+  "contributions": {
+    "title": "My Contributions",
+    "introHeading": "Overview",
+    "intro": "My primary focus for the Trumi MVP centred on three interconnected areas: integrating a customizable character and AI into the app in a meaningful way, designing the reflection experience across multiple pathways, and ensuring that every interaction felt light, non-judgmental, and emotionally safe for the user.",
+    "sections": [
+      {
+        "heading": "AI and Character Integration",
+        "paragraphs": [
+          "One of my most technically and creatively significant contributions was integrating a working AI into the Trumi prototype using the free Gemini API. This brought the character to life beyond visual customization, giving users an actual conversational companion they could reflect with, receive guidance from, and check in with throughout their day.",
+          "I mapped character changes to user actions, connecting goal completions, check-in streaks, and reflection entries to visible character growth and wardrobe customization. The character is not decorative. It is the emotional interface of the app, responding to how you are actually doing rather than just what you have logged. I also worked on the conversational tone of the AI, establishing a voice that asks questions before offering suggestions, and responds to setbacks with perspective rather than pressure."
+        ]
+      },
+      {
+        "heading": "Character and AI Screen",
+        "paragraphs": [
+          "The character screen is where the gamification and the emotional design come together. The AI chat gives users a space to reflect out loud, receive gentle guidance, and explore their goals without judgment. The \u201cadvice sandwich\u201d principle from our research lived here most directly. The AI is designed to affirm first, offer a thoughtful nudge, and close with encouragement, because that is what users actually told us they needed."
+        ]
+      },
+      {
+        "heading": "Reflection Pathways",
+        "paragraphs": [
+          "I designed the full reflection experience across multiple entry points. Users can complete guided daily check-ins in the morning, midday, or evening, or dive into deeper written reflections when they want to go further. Our survey showed that guided reflection questions scored an average of 3.6 out of 5 compared to blank journaling, confirming that structure genuinely helps as long as it does not feel rigid or prescriptive.",
+          "Beyond individual sessions, I designed weekly and monthly progress summaries that surface patterns in a user\u2019s mood, habits, and movement toward their goals. The intention was to make users feel seen by their own data rather than evaluated by it."
+        ]
+      },
+      {
+        "heading": "Reflection and Insights Screen",
+        "paragraphs": [
+          "The reflection and insights view brings a user\u2019s entries together into something meaningful over time. Rather than a list of completed tasks, it is a picture of who they are and how they are growing."
+        ]
+      },
+      {
+        "heading": "Keeping It Light",
+        "paragraphs": [
+          "Across every screen I touched, my guiding principle was the same: no guilt, no pressure, no judgment. When a user steps away from their goals or misses a check-in, the app does not punish them for it. The language stays warm, the experience stays inviting, and the path back always feels open. This was not a single design decision but a standard I applied consistently across every state and interaction throughout the product."
+        ]
+      }
+    ]
+  },
+  "outcome": {
+    "title": "Outcome",
+    "paragraphs": [
+      "Trumi\u2019s MVP delivers guided daily check-ins, a customizable character that reflects the user, AI-powered reflection conversations built on the Gemini API, written journaling pathways, and weekly and monthly insight summaries. The design language is soft, calm, and intentional across every state, including the difficult ones.",
+      "What differentiated Trumi in testing was tone. Users noticed that the app was not trying to push them. It was trying to understand them first."
+    ]
+  },
+  "reflection": {
+    "title": "Reflection",
+    "paragraphs": [
+      "The most interesting challenge on Trumi was not any single feature. It was maintaining a consistent emotional register across every interaction. The moment a single screen feels transactional or harsh, the whole feeling of a supportive companion breaks.",
+      "What this project taught me is that UX writing and interaction design are not separate concerns when the product is emotional by nature. Every state, every transition, and every piece of copy either reinforces the feeling of being supported or quietly undermines it. Designing with that kind of consistency pushed me to think about systems more holistically than I had before, and it is an approach I plan to carry into every project going forward."
+    ]
+  },
+  "relatedProjects": [
+    {
+      "slug": "enmax-design-system",
+      "title": "ENMAX Design System",
+      "description": "Understand how I helped shape ENMAX\u2019s design system and set the foundation for powerful AI assisted workflows.",
+      "imageKey": "enmax",
+      "imageType": "cropped"
+    },
+    {
+      "slug": "yyventc",
+      "title": "YYventC",
+      "description": "A community-first, mobile event discovery platform designed exclusively for Calgary.",
+      "imageKey": "yyventc",
+      "imageType": "square"
+    }
+  ]
+}
